@@ -61,4 +61,96 @@ public class Swea1208_0805 {
 		return sorted;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static int[] countSort(int[] arr,int K) {
+		//1 범위 확인해서 count 배열 만들어두기
+		int[] count = new int[K];
+		int N = arr.length;
+		
+		//2 카운트에 arr[i] 개수 넣기
+		for(int i = 0; i<N; i++) {
+			count[arr[i]]++;
+		}
+		
+		//3 누적합
+		for(int i = 1; i<K - 1; i++) {
+			count[i] += count[i-1];
+		}
+		//4 뒤에서부터 정렬
+		int[] sort = new int[N];
+		for(int i = N-1; i>=0; i++) {
+			sort[--count[arr[i]]] = arr[i];
+		}
+		
+		return sort;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
