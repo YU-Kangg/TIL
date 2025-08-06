@@ -27,6 +27,7 @@ public class Swea5356_0806 {
 			
 			System.out.print("#" + t + " ");
 			
+			//출력
 			for (int i = 0; i < 15; i++) {
 				for (int j = 0; j < 5; j++) {
 					if (cr[j][i] != 0) {

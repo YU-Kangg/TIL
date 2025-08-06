@@ -15,10 +15,10 @@ public class Swea1215_0806 {
 			// 결과값 저장해둘 result 생성
 			int result = 0;
 
-			//
+			// 입력받을 String 배열 생성
 			String[] arr = new String[8];
 
-			// 8번 입력 받기
+			// 8번 입력 받고 String 배열에 넣기
 			for (int i = 0; i < 8; i++) {
 				arr[i] = sc.nextLine();
 			}
@@ -43,7 +43,7 @@ public class Swea1215_0806 {
 					// append() 메서드 사용을 위해 StringBuilder 생성
 					StringBuilder sb = new StringBuilder();
 					for (int k = 0; k < t; k++) {
-						// 
+						//세로방향으로 String의 i번째에 있는 char끼리 조립
 						sb.append(arr[j + k].charAt(i));
 					}
 					// tmp에 조립된 String 넣기

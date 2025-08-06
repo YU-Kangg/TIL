@@ -1,40 +1,41 @@
 package Swea1210;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Swea1210_0805 {
-	static int[] dr = { -1, 1, 0, 0 }; // 행의 변화량 dy | dx | di
-	static int[] dc = { 0, 0, -1, 1 }; // 열의 변화량 dx | dy | dj
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] dx = { -1, 1 }; // 왼쪽, 오른쪽
 
-	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("Swea/src/Swea1210/input (4).txt");
-
-		Scanner sc = new Scanner(file);
-//		Scanner sc = new Scanner(System.in);
-		// 입력 받기
-		int startIdx = 0;
-		int count = 0;
-		int[] otherLine = new int[count];
-
-		int t = sc.nextInt();
-		for (int tc = 1; tc <= t; tc++) {
-			int[][] arr = new int[100][100];
+		for (int testCase = 1; testCase <= 10; testCase++) {
+			int row = 99, col = 0;
+			int[][] ladder = new int[100][100];
+			int tcNum = sc.nextInt();
 			for (int i = 0; i < 100; i++) {
-				for (int j = 0; j < 100; j++) {
-					arr[i][j] = sc.nextInt();
-				}
+				for (int j = 0; j < 100; j++)
+					ladder[i][j] = sc.nextInt();
 			}
 
-			for (int i = 0; i < 100; i++) {
-				if (arr[99][i] == 1) {
-					count++;
-					otherLine[i] = arr[99][i];
-				} else if (arr[99][i] == 2) {
-					startIdx = i;
-				}
+			for (int j = 0; j < 100; j++) {
+				if (ladder[99][j] == 2)
+					col = j;
 			}
+
+			while (row > 0) {
+			    boolean moved = false;
+			    for (int d = 0; d < 2; d++) {
+			        int nextCol = col + dx[d];
+			        while (nextCol >= 0 && nextCol < 100 && ladder[row][nextCol] == 1) {
+			            col = nextCol;
+			            nextCol += dx[d];
+			            moved = true;
+			        }
+			        if (moved) break;
+			    }
+			    // 이동했든 안 했든 한 칸 위로
+			    row--;
+			}
+			System.out.println("#" + " " + col);
 		}
 	}
 }
