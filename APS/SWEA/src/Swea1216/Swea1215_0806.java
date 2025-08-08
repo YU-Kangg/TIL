@@ -36,6 +36,7 @@ public class Swea1215_0806 {
 							if (result < len) {
 								//대입
 								result = len;
+								break;
 							}
 						}
 					}
