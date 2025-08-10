@@ -24,6 +24,7 @@ public class Swea1222_0808 {
 					op.push(tmp);
 				}
 			}
+			
 			while (!op.isEmpty()) {
 				sb.append(op.pop());
 			}
@@ -37,7 +38,9 @@ public class Swea1222_0808 {
 					stack.push(A + B);
 				}
 			}
+			
 			System.out.println("#" + tc + " " + stack.pop());
+		
 		}
 	}
 }

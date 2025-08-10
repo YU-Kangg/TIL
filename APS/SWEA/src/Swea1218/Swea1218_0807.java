@@ -12,20 +12,19 @@ public class Swea1218_0807 {
 			int t = sc.nextInt();
 			sc.nextLine();
 			String st = sc.nextLine();
-
+			
 			Stack<Character> stack1 = new Stack<>();
 			Stack<Character> stack2 = new Stack<>();
 			Stack<Character> stack3 = new Stack<>();
 			Stack<Character> stack4 = new Stack<>();
-
+			
 			boolean isOk = true;
-
+			
 			for (int i = 0; i < t; i++) {
 				if (t % 2 != 0) {
 					isOk = false;
 					break;
 				}
-
 				if (st.charAt(i) == '(') {
 					stack1.push(st.charAt(i));
 				} else if (st.charAt(i) == '{') {
