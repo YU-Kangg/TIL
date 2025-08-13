@@ -9,9 +9,6 @@ public class Swea1224_0808 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-1+2+3+4
-(1+2)/2
-12+2/
 
 		for (int tc = 1; tc <= 10; tc++) {
 			int t = sc.nextInt();
