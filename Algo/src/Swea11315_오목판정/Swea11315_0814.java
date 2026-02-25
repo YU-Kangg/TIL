@@ -1,4 +1,4 @@
-ddpackage Swea11315_오목판정;
+package Swea11315_오목판정;
 
 import java.util.Scanner;
 
